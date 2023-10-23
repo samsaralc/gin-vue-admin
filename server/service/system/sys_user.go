@@ -51,7 +51,7 @@ func (userService *UserService) Login(u *system.SysUser) (userInter *system.SysU
 		if ok := utils.BcryptCheck(u.Password, user.Password); !ok {
 			return nil, errors.New("密码错误")
 		}
-		MenuServiceApp.UserAuthorityDefaultRouter(&user)
+		//MenuServiceApp.UserAuthorityDefaultRouter(&user)
 	}
 	return &user, err
 }
@@ -203,7 +203,7 @@ func (userService *UserService) GetUserInfo(uuid uuid.UUID) (user system.SysUser
 	if err != nil {
 		return reqUser, err
 	}
-	MenuServiceApp.UserAuthorityDefaultRouter(&reqUser)
+	//MenuServiceApp.UserAuthorityDefaultRouter(&reqUser)
 	return reqUser, err
 }
 

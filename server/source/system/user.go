@@ -10,7 +10,8 @@ import (
 	"gorm.io/gorm"
 )
 
-const initOrderUser = initOrderAuthority + 1
+// const initOrderUser = initOrderAuthority + 1
+const initOrderUser = 1
 
 type initUser struct{}
 
@@ -39,12 +40,19 @@ func (i initUser) InitializerName() string {
 	return sysModel.SysUser{}.TableName()
 }
 
+type initAuthority struct {
+}
+
+func (a initAuthority) InitializerName() any {
+	return nil
+
+}
+
 func (i *initUser) InitializeData(ctx context.Context) (next context.Context, err error) {
 	db, ok := ctx.Value("db").(*gorm.DB)
 	if !ok {
 		return ctx, system.ErrMissingDBContext
 	}
-	password := utils.BcryptHash("6447985")
 	adminPassword := utils.BcryptHash("123456")
 
 	entities := []sysModel.SysUser{
@@ -52,21 +60,12 @@ func (i *initUser) InitializeData(ctx context.Context) (next context.Context, er
 			UUID:        uuid.Must(uuid.NewV4()),
 			Username:    "admin",
 			Password:    adminPassword,
-			NickName:    "Mr.奇淼",
+			NickName:    "airport",
 			HeaderImg:   "https://qmplusimg.henrongyi.top/gva_header.jpg",
 			AuthorityId: 888,
 			Phone:       "17611111111",
 			Email:       "333333333@qq.com",
 		},
-		{
-			UUID:        uuid.Must(uuid.NewV4()),
-			Username:    "a303176530",
-			Password:    password,
-			NickName:    "用户1",
-			HeaderImg:   "https:///qmplusimg.henrongyi.top/1572075907logo.png",
-			AuthorityId: 9528,
-			Phone:       "17611111111",
-			Email:       "333333333@qq.com"},
 	}
 	if err = db.Create(&entities).Error; err != nil {
 		return ctx, errors.Wrap(err, sysModel.SysUser{}.TableName()+"表数据初始化失败!")

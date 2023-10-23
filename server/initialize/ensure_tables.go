@@ -35,25 +35,16 @@ func (e *ensureTables) MigrateTable(ctx context.Context) (context.Context, error
 		return ctx, system.ErrMissingDBContext
 	}
 	tables := []interface{}{
-		sysModel.SysApi{},
 		sysModel.SysUser{},
 		sysModel.SysBaseMenu{},
 		sysModel.SysAuthority{},
 		sysModel.JwtBlacklist{},
-		sysModel.SysDictionary{},
-		sysModel.SysAutoCodeHistory{},
 		sysModel.SysOperationRecord{},
-		sysModel.SysDictionaryDetail{},
 		sysModel.SysBaseMenuParameter{},
-		sysModel.SysBaseMenuBtn{},
-		sysModel.SysAuthorityBtn{},
-		sysModel.SysAutoCode{},
-		sysModel.SysChatGptOption{},
 
 		adapter.CasbinRule{},
 
 		example.ExaFile{},
-		example.ExaCustomer{},
 		example.ExaFileChunk{},
 		example.ExaFileUploadAndDownload{},
 	}
@@ -71,24 +62,15 @@ func (e *ensureTables) TableCreated(ctx context.Context) bool {
 		return false
 	}
 	tables := []interface{}{
-		sysModel.SysApi{},
 		sysModel.SysUser{},
 		sysModel.SysBaseMenu{},
 		sysModel.SysAuthority{},
 		sysModel.JwtBlacklist{},
-		sysModel.SysDictionary{},
-		sysModel.SysAutoCodeHistory{},
 		sysModel.SysOperationRecord{},
-		sysModel.SysDictionaryDetail{},
 		sysModel.SysBaseMenuParameter{},
-		sysModel.SysBaseMenuBtn{},
-		sysModel.SysAuthorityBtn{},
-		sysModel.SysAutoCode{},
-		sysModel.SysChatGptOption{},
 		adapter.CasbinRule{},
 
 		example.ExaFile{},
-		example.ExaCustomer{},
 		example.ExaFileChunk{},
 		example.ExaFileUploadAndDownload{},
 	}

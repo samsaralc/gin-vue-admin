@@ -36,20 +36,12 @@ func RegisterTables() {
 	db := global.GVA_DB
 	err := db.AutoMigrate(
 		// 系统模块表
-		system.SysApi{},
 		system.SysUser{},
 		system.SysBaseMenu{},
 		system.JwtBlacklist{},
 		system.SysAuthority{},
-		system.SysDictionary{},
 		system.SysOperationRecord{},
-		system.SysAutoCodeHistory{},
-		system.SysDictionaryDetail{},
 		system.SysBaseMenuParameter{},
-		system.SysBaseMenuBtn{},
-		system.SysAuthorityBtn{},
-		system.SysAutoCode{},
-		system.SysChatGptOption{},
 
 		example.ExaFile{},
 		example.ExaCustomer{},

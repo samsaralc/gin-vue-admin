@@ -5,7 +5,6 @@ go 1.18
 require (
 	github.com/aliyun/aliyun-oss-go-sdk v2.2.7+incompatible
 	github.com/aws/aws-sdk-go v1.44.307
-	github.com/casbin/casbin/v2 v2.71.1
 	github.com/casbin/gorm-adapter/v3 v3.18.0
 	github.com/flipped-aurora/ws v1.0.2
 	github.com/fsnotify/fsnotify v1.6.0
@@ -17,15 +16,12 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/gookit/color v1.5.4
 	github.com/huaweicloud/huaweicloud-sdk-go-obs v3.21.8+incompatible
-	github.com/jordan-wright/email v0.0.0-20200824153738-3f5bafa1cd84
 	github.com/mojocn/base64Captcha v1.3.5
-	github.com/otiai10/copy v1.7.0
 	github.com/pkg/errors v0.9.1
 	github.com/qiniu/api.v7/v7 v7.4.1
 	github.com/qiniu/qmgo v1.1.8
 	github.com/redis/go-redis/v9 v9.0.5
 	github.com/robfig/cron/v3 v3.0.1
-	github.com/sashabaranov/go-openai v1.14.1
 	github.com/shirou/gopsutil/v3 v3.23.6
 	github.com/songzhibin97/gkit v1.2.11
 	github.com/spf13/viper v1.16.0
@@ -40,7 +36,6 @@ require (
 	golang.org/x/crypto v0.10.0
 	golang.org/x/sync v0.3.0
 	golang.org/x/text v0.11.0
-	gorm.io/datatypes v1.2.0
 	gorm.io/driver/mysql v1.5.1
 	gorm.io/driver/postgres v1.5.2
 	gorm.io/driver/sqlserver v1.5.1
@@ -52,6 +47,7 @@ require (
 	github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible // indirect
 	github.com/KyleBanks/depth v1.2.1 // indirect
 	github.com/bytedance/sonic v1.9.1 // indirect
+	github.com/casbin/casbin/v2 v2.71.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
 	github.com/clbanning/mxj v1.8.4 // indirect

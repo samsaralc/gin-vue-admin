@@ -11,7 +11,6 @@ import (
 	"github.com/gofrs/uuid/v5"
 	"github.com/gookit/color"
 	"gorm.io/gorm"
-	"path/filepath"
 )
 
 type SqliteInitHandler struct{}
@@ -56,7 +55,7 @@ func (h SqliteInitHandler) EnsureDB(ctx context.Context, conf *request.InitDB) (
 	}); err != nil {
 		return ctx, err
 	}
-	global.GVA_CONFIG.AutoCode.Root, _ = filepath.Abs("..")
+	//global.GVA_CONFIG.AutoCode.Root, _ = filepath.Abs("..")
 	next = context.WithValue(next, "db", db)
 	return next, err
 }
